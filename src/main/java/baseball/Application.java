@@ -8,8 +8,8 @@ public class Application {
 
         Scanner sc = new Scanner(System.in);
         int[] num = new int[3];
-        for(int i=0; i<num.length; i++) num[i] = sc.nextInt();
+        // for(int i=0; i<num.length; i++) num[i] = sc.nextInt();
 
-        System.out.println(Arrays.toString(num));
+        // System.out.println(Arrays.toString(num));
     }
 }
