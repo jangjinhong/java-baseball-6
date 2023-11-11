@@ -142,3 +142,33 @@ while (computer.size() < 3) {
 - 미션은 [java-baseball-6](https://github.com/woowacourse-precourse/java-baseball-6) 저장소를 Fork & Clone해 시작한다.
 - **기능을 구현하기 전 `docs/README.md`에 구현할 기능 목록을 정리**해 추가한다.
 - 과제 진행 및 제출 방법은 [프리코스 과제 제출](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse) 문서를 참고한다.
+
+
+
+
+---
+## ✅ 구현할 기능 목록 정리 ✅
+- MVC 패턴 사용 → Model을 정해야 함
+<br><br>
+### Entity 취급이 필요한 것
+![img_1.png](img_1.png)
+1. ### **Computer** <br>
+   난수를 생성하는 상대방은 컴퓨터로 취급한다고 명시되어 있으니 사용자와 게임할 상대방을 Computer로 정의<br>
+    1.1. **Computer의 역할**
+      - 1~9까지의 정수 난수 3개 생성
+      - User가 게임을 재시작했을 경우에만 난수 3개 재생성
+
+
+2. ### **User**<br>
+   숫자 야구 게임에 참여하는 참여자를 User로 정의<br>
+   2.1. **User의 역할**
+    - 1-9까지의 정수 3개 입력
+    - 승리 후 게임 재시작/종료 선택 (1 or 2 입력)
+
+
+3. ### **Referee**<br>
+   게임 참가자 2명의 게임을 진행/승패여부안내를 할 심판을 Referee로 정의<br>
+   3.1. **Referee의 역할**
+    - 스트라이크/낫싱/볼을 계산
+    - 계산 결과를 안내해주어야 함
+    - User가 승리했을 경우, 1 or 2 입력값에 따른 안내를 진행해주어야 함
