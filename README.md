@@ -153,7 +153,7 @@ while (computer.size() < 3) {
 ### Entity 취급이 필요한 것
 ![img_1.png](img_1.png)
 1. ### **Computer** <br>
-   난수를 생성하는 상대방은 컴퓨터로 취급한다고 명시되어 있으니 사용자와 게임할 상대방을 Computer로 정의<br>
+   난수를 생성하는 ahrfhr상대방은 컴퓨터로 취급한다고 명시되어 있으니 사용자와 게임할 상대방을 Computer로 정의<br>
     1.1. **Computer의 역할**
       - 1~9까지의 정수 난수 3개 생성
       - User가 게임을 재시작했을 경우에만 난수 3개 재생성
