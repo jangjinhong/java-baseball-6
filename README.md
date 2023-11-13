@@ -153,7 +153,7 @@ while (computer.size() < 3) {
 
 ## 1. Model
 ### 1.1. 취급할 Entity
-![img_1.png](..%2FOneDrive%2F%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4%2Fimg_1.png)
+![img_1.png](img%2Fimg_1.png)
 1. ### **Computer** <br>
    난수를 생성하는 ahrfhr상대방은 컴퓨터로 취급한다고 명시되어 있으니 사용자와 게임할 상대방을 Computer로 정의<br><br>
     1.1. **Computer의 역할**
@@ -176,5 +176,4 @@ while (computer.size() < 3) {
     - User가 승리했을 경우, 1 or 2 입력값에 따른 안내를 진행해주어야 함
 <br><br>
 ### 1.2. 각 Entity의 수행 기능 설계
-![img_2.png](..%2FOneDrive%2F%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4%2Fimg_2.png)
-
+![img_2.png](img%2Fimg_2.png)
