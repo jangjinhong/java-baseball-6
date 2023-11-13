@@ -1,34 +1,12 @@
 package baseball;
 import baseball.contorller.GameController;
 
-import java.util.*;
-
-
 public class Application {
-    /*
-    static public void makeRandom(List<Integer> computerNum) {
-        computerNum.clear();
-        for(int i = 0; i < 3; i++) {
-            computerNum.add(i, (int)(Math.random()*9 +1));
-            for(int j = 0; j < i; j++) {
-                if(computerNum.get(i) == computerNum.get(j)) {
-                    computerNum.remove(i);
-                    i--;
-                    break;
-                }
-            }
-        }
-    }
-    */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        List<Integer> computerNum = new ArrayList<>();
-        List<Integer> userNum = new ArrayList<>();
-        int strike = 0;
-        int ball = 0;
+        GameController gameController = new GameController();
+        System.out.println(gameController.makeRandomNumber());
 
-        GameController gameController;
-        System.out.println(gameController.makeRandom());
+
 /*
         makeRandom(computerNum);
 
