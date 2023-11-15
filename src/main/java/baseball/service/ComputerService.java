@@ -1,24 +1,29 @@
 package baseball.service;
 
 import baseball.entity.Computer;
-
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.*;
 
-public class ComputerService {
-    private Computer computer;
+import static baseball.contorller.GameController.MAX_NUMBER_SIZE;
 
-    public List<Integer> makeRandom() {
-        List<Integer> computerNum = computer.getComputerNum();
-        for(int i = 0; i < 3; i++) {
-            computerNum.add(i, (int)(Math.random()*9 +1));
-            for(int j = 0; j < i; j++) {
-                if(computerNum.get(i) == computerNum.get(j)) {
-                    computerNum.remove(i);
-                    i--;
-                    break;
-                }
-            }
+public class ComputerService {
+    static Computer computer = new Computer();
+
+    public static List<Integer> makeRandomNumber() {
+        List<Integer> computerNumber = computer.getComputerNumber();
+
+        while(computerNumber.size() < MAX_NUMBER_SIZE) {
+            computerNumber.add(Randoms.pickNumberInRange(1, 9));
+            if(!hasDuplicate(computerNumber))
+                computerNumber.remove(computerNumber.size()-1);
         }
-        return computerNum;
+        return computerNumber;
+    }
+
+    public static boolean hasDuplicate(List<Integer> computerNumber) {
+        Set<Integer> numberSet = new HashSet<>(computerNumber);
+        if(numberSet.size() != computerNumber.size())
+            return false;
+        return true;
     }
 }
