@@ -3,10 +3,10 @@ package baseball.entity;
 import java.util.*;
 
 public class Computer {
-    private List<Integer> computerNumber = new ArrayList<>();
+    private List<Integer> computerNumbers = new ArrayList<>();
 
-    public List<Integer> getComputerNumber() {
-        return computerNumber;
+    public List<Integer> getcomputerNumbers() {
+        return computerNumbers;
     }
 
 

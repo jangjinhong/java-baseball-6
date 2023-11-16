@@ -1,10 +1,28 @@
 package baseball;
+
 import baseball.contorller.GameController;
+import baseball.service.Compare;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
         GameController gameController = new GameController();
-        System.out.println(gameController.makeRandomNumber());
+        List<Integer> user = new ArrayList<>();
+        user.add(1);
+        user.add(2);
+        user.add(3);
+
+        List<Integer> computer = new ArrayList<>();
+        computer.add(1);
+        computer.add(3);
+        computer.add(6);
+
+        //gameController.startGame();
+        Compare.StrikeOrBallCount(computer, user);
+        // System.out.println(gameController.makeRandomNumbers());
+        // System.out.println(gameController.inputPlayerNumber());
 
 
 /*
