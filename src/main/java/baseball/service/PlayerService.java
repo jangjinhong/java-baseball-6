@@ -12,9 +12,8 @@ public class PlayerService {
 
     public static List<Integer> inputPlayerNumber() {
         List<Integer> playerNumber = new ArrayList<>();
-        String data = "";
+        String data = Console.readLine();
 
-        data = Console.readLine();
         checkValidation(data);
 
         String[] d = data.split(" ");
@@ -26,23 +25,14 @@ public class PlayerService {
         return player.getplayerNumber();
     }
 
-
-    //예외처리 대상인지 체크
     private static void checkValidation(String data) {
+        checkOutOfRange(data); // 범위체크
         checkInteger(data);   // 정수체크
         checkDuplicate(data); // 중복체크
-        checkOutOfRange(data); // 범위체크
-    }
-
-    private static void checkOutOfRange(String data) {
-        if(!isOutOfRange(data)) {
-            OutputView.OutOfRangeErrorMessage();
-            throw new IllegalArgumentException();
-        }
     }
 
 
-
+    /*      ------------    예외처리를 위한 메소드     ------------       */
     private static void checkInteger(String data) {
         if(!isInteger(data)) {
             OutputView.TypeErrorMessage();
@@ -51,29 +41,41 @@ public class PlayerService {
     }
 
     private static void checkDuplicate(String data) {
-        if(hasDuplicate(data)) {
+        if(playerNumbersHasDuplicate(data)) {
             OutputView.DuplicateErrorMessage();
             throw new IllegalArgumentException();
         }
     }
 
+    private static void checkOutOfRange(String data) {
+        if(isOutOfRange(data)) {
+            OutputView.OutOfRangeErrorMessage();
+            throw new IllegalArgumentException();
+        }
+    }
+
+
     private static boolean isInteger(String data) {
-        return data != null && data.matches("[-+]?\\d*\\.?\\d+");
-        //if(data == null) return false;
+        String value = data.replace(" ", "");
+        // if(data == null) return false;
+        try {
+            Integer integer = Integer.parseInt(value);
+            return true;
+        } catch(NumberFormatException e) {
+            return false;
+        }
     }
 
     private static boolean isOutOfRange(String data) {
-        String[] numbers = data.split(" ");
-        for(String s : numbers) {
-            if(Integer.parseInt(s) >= 1 && Integer.parseInt(s) <= 9)
-                return true;
-        }
+        String value = data.replace(" ", "");
+        if(value.length() != MAX_NUMBER_SIZE)
+            return true;
         return false;
     }
 
-    private static boolean hasDuplicate(String data) {
-        String[] d = data.split(" ");
-        List<String> dataList = new ArrayList<>(Arrays.asList(d));
+    private static boolean playerNumbersHasDuplicate(String data) {
+        String[] value = data.split(" ");
+        List<String> dataList = new ArrayList<>(Arrays.asList(value));
         Set<String> numberSet = new HashSet<>(dataList);
         if(numberSet.size() != MAX_NUMBER_SIZE)
             return true;

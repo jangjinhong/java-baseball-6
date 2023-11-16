@@ -19,8 +19,8 @@ public class GameController {
         InputView.run();
     }
 
-    public static List<Integer> makeRandomNumbers() {
-        return ComputerService.makeRandomNumbers();
+    public static List<Integer> getRandomNumbers() {
+        return ComputerService.getRandomNumbers();
     }
 
     public static List<Integer> inputPlayerNumber() {

@@ -21,7 +21,7 @@ public class Application {
 
         //gameController.startGame();
         Compare.StrikeOrBallCount(computer, user);
-        // System.out.println(gameController.makeRandomNumbers());
+        // System.out.println(gameController.getRandomNumbers());
         // System.out.println(gameController.inputPlayerNumber());
 
 
