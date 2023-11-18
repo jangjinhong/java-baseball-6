@@ -1,7 +1,11 @@
 package baseball.entity;
 
 public class Referee {
-    private Computer computer;
+    private final Computer computer;
+
+    public Referee(Computer computer) {
+        this.computer = computer;
+    }
 
 
 }
