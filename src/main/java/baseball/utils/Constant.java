@@ -1,4 +1,4 @@
-package baseball.entity;
+package baseball.utils;
 
 public class Constant {
     public final static int MAX_NUMBER_SIZE = 3;
