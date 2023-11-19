@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    private List<Integer> playerNumbers = new ArrayList<>();
+    private String playerNumbers;
 
-    public List<Integer> getplayerNumbers() {
+    public String getplayerNumbers() {
         return playerNumbers;
     }
-    public void setPlayerNumbers(List<Integer> playerNumber) {
+    public void setPlayerNumbers(String playerNumber) {
         this.playerNumbers = playerNumber;
     }
 
