@@ -11,11 +11,7 @@ public class InputView {
         System.out.print(REQUEST_NUMBER_MESSAGE);
     }
 
-    public static void setRetryNumber() {
-        System.out.print(REQUEST_NUMBER_MESSAGE);
-    }
-
-    public static String RestartNumber() {
+    public static String RestartNumberRequestMessage() {
         System.out.println(REQUEST_RESTART_NUMBER_MESSAGE);
         return Console.readLine();
     }

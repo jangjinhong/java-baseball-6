@@ -10,25 +10,22 @@ public class GameController {
 
     public void gameStart() {
         generateRandomNumbers();
-        getRandomNumbers();
-        // System.out.println("computerNumbers: " + getRandomNumbers());
-        refereeService.gameStart();
+        refereeService.printGameStartMessage();
         compare();
-        refereeService.gameEnd();
-        do {
+        refereeService.printGameEndMessage();
+        while(refereeService.shouldRestartGame()) {
             gameReStart();
-        } while(refereeService.gameReStart());
+        }
     }
 
     public void gameReStart() {
         generateRandomNumbers();
-        // System.out.println("computerNumbers: " + getRandomNumbers());
         compare();
     }
 
     public void compare() {
         do {
-            refereeService.NumberRequest();
+            refereeService.printNumberRequestMessage();
             inputPlayerNumbers();
             getHint();
         } while(getStrikeCount() != 3);
@@ -38,24 +35,20 @@ public class GameController {
         computerService.generateRandomNumbers();
     }
 
-    public List<Integer> getRandomNumbers() {
-        return computerService.getRandomNumbers();
-    }
-
-    public List<Integer> inputPlayerNumbers() {
+    public String inputPlayerNumbers() {
         return playerService.inputPlayerNumbers();
-    }
-
-    public void StrikeOrBallCount(List<Integer> computerNumbers, List<Integer> playerNumbers) {
-        refereeService.printHintMessage(computerService.getHint(computerNumbers, playerNumbers));
-    }
-
-    public int StrikeCount(List<Integer> computerNumbers, List<Integer> playerNumbers) {
-        return computerService.countStrike(computerNumbers, playerNumbers);
     }
 
     public void getHint() {
         StrikeOrBallCount(computerService.getRandomNumbers(), playerService.getPlayerNumbers());
+    }
+
+    public void StrikeOrBallCount(List<Integer> computerNumbers, String playerNumbers) {
+        refereeService.printHintMessage(computerService.getHint(computerNumbers, playerNumbers));
+    }
+
+    public int StrikeCount(List<Integer> computerNumbers, String playerNumbers) {
+        return computerService.countStrike(computerNumbers, playerNumbers);
     }
 
     public int getStrikeCount() {

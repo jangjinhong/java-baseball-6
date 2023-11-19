@@ -4,27 +4,24 @@ import baseball.view.InputView;
 import baseball.view.OutputView;
 
 public class RefereeService {
-    public void gameStart() {
+    public void printGameStartMessage() {
         OutputView.printStartMessage();
-        //InputView.NumberRequestMessage();
     }
-    public void NumberRequest() {
+
+    public void printNumberRequestMessage() {
         InputView.NumberRequestMessage();
     }
 
-    public void gameEnd() {
+    public void printGameEndMessage() {
         OutputView.gameEndMessage();
-        InputView.RestartNumber();
-    }
-
-    public boolean gameReStart() {
-        String retryNumber = InputView.RestartNumber();
-        if(retryNumber.equals("1"))
-            return true;
-        return false;
     }
 
     public void printHintMessage(int[] hint) {
         OutputView.printHintMessage(hint);
+    }
+
+    public boolean shouldRestartGame() {
+        String restartNumber = InputView.RestartNumberRequestMessage();
+        return restartNumber.equals("1");
     }
 }
