@@ -5,6 +5,7 @@ import java.util.List;
 
 public class GameController {
     static ComputerService computerService = new ComputerService();
+    static Compare compare = new Compare();
     static PlayerService playerService = new PlayerService();
     static RefereeService refereeService = new RefereeService();
 
@@ -44,14 +45,14 @@ public class GameController {
     }
 
     public void StrikeOrBallCount(List<Integer> computerNumbers, String playerNumbers) {
-        refereeService.printHintMessage(computerService.getHint(computerNumbers, playerNumbers));
-    }
-
-    public int StrikeCount(List<Integer> computerNumbers, String playerNumbers) {
-        return computerService.countStrike(computerNumbers, playerNumbers);
+        refereeService.printHintMessage(compare.getHint(computerNumbers, playerNumbers));
     }
 
     public int getStrikeCount() {
         return StrikeCount(computerService.getRandomNumbers(), playerService.getPlayerNumbers());
+    }
+
+    public int StrikeCount(List<Integer> computerNumbers, String playerNumbers) {
+        return compare.countStrike(computerNumbers, playerNumbers);
     }
 }
