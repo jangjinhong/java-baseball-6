@@ -142,3 +142,53 @@ while (computer.size() < 3) {
 - 미션은 [java-baseball-6](https://github.com/woowacourse-precourse/java-baseball-6) 저장소를 Fork & Clone해 시작한다.
 - **기능을 구현하기 전 `docs/README.md`에 구현할 기능 목록을 정리**해 추가한다.
 - 과제 진행 및 제출 방법은 [프리코스 과제 제출](https://github.com/woowacourse/woowacourse-docs/tree/master/precourse) 문서를 참고한다.
+
+
+
+
+---
+## ✅ 구현할 기능 목록 정리 ✅
+- MVC 패턴 사용 → Model을 정해야 함
+<br>
+
+## 1. Model
+### 1.1. 취급할 Entity
+1. ### **Computer** <br>
+   난수를 생성하는 상대방 = 컴퓨터 <br>
+    1.1. **Computer의 역할**
+      - 1~9까지의 정수 난수 3개 생성
+      - User가 게임을 재시작했을 경우, 난수 3개 재생성
+      - compare 계산
+
+2. ### **Player**<br>
+   숫자 야구 게임에 참여하는 참여자를 User로 정의<br>
+   2.1. **Player의 역할**
+    - 1-9까지의 정수 3개 입력
+    - 승리 후 게임 재시작/종료 선택 (1 or 2 입력)
+
+
+3. ### **Referee**<br>
+   게임 참가자 2명의 게임을 진행/승패여부안내를 할 심판을 Referee로 정의<br><br>
+   3.1. **Referee의 역할**
+    - 게임 진행
+    - 스트라이크/낫싱/볼 계산 결과 안내
+    - User가 승리했을 경우, 1 or 2 입력값에 따른 안내 진행
+<br><br>
+## 2. 기능 목록
+####  1. computer: 1-9 사이 정수 3자리 생성 <br><br>
+#### 2. player: 1-9 사이 정수 3자리 입력 
+    1. 1-9 사이 범위 밖의 숫자일 경우, 예외 처리
+    2. 정수가 아닐 경우, 예외 처리
+    3. 중복된 숫자일 경우, 예외 처리
+#### 3. 입력 값에 대한 힌트 제공
+    1. 자리 / 숫자 둘 다 맞춘 경우 → strike
+    2. 숫자만 맞춘 경우 → ball
+    3. 둘 다 맞추지 못한 경우 → nothing
+#### 4. 입력 값에 대한 승/패 유무 안내
+    1. 3 strike가 아닌 경우
+        1. 숫자 3자리 재입력
+    2. 3자리의 숫자를 모두 맞춘 경우(3 strike) 승리
+        1. 게임 종료
+        2. 게임 재시작 / 종료 여부를 입력 받음
+            1. 1 입력 시, 재시작
+            2. 2 입력 시, 종료
